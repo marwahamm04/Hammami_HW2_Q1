@@ -65,3 +65,22 @@ public:
             chkPtr[i] = other.chkPtr[i];
         }
     }
+
+    // Overloaded assignment operator
+    CheckBook &operator=(const CheckBook &other)
+    {
+        if (this != &other)
+        {
+            delete[] chkPtr;
+            balance = other.balance;
+            lastDeposit = other.lastDeposit;
+            numOfChecks = other.numOfChecks;
+            checkBookSize = other.checkBookSize;
+            chkPtr = new Check[checkBookSize];
+            for (int i = 0; i < numOfChecks; ++i)
+            {
+                chkPtr[i] = other.chkPtr[i];
+            }
+        }
+        return *this;
+    }
