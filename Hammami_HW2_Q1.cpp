@@ -48,3 +48,20 @@ public:
     {
         chkPtr = new Check[checkBookSize];
     }
+
+    // Destructor
+    ~CheckBook()
+    {
+        delete[] chkPtr;
+    }
+
+    // Copy constructor
+    CheckBook(const CheckBook &other) : balance(other.balance), lastDeposit(other.lastDeposit),
+                                        numOfChecks(other.numOfChecks), checkBookSize(other.checkBookSize)
+    {
+        chkPtr = new Check[checkBookSize];
+        for (int i = 0; i < numOfChecks; ++i)
+        {
+            chkPtr[i] = other.chkPtr[i];
+        }
+    }
