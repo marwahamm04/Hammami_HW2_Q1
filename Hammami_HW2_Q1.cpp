@@ -84,3 +84,30 @@ public:
         }
         return *this;
     }
+    // Getter and setter functions
+    float getBalance() const
+    {
+        return balance;
+    }
+
+    void setBalance(float newBalance)
+    {
+        balance = newBalance;
+    }
+
+    // Other getter and setter functions...
+
+    // Deposit function
+    void deposit(float amount)
+    {
+        balance += amount;
+        lastDeposit = amount;
+    }
+
+    // WriteCheck function
+    bool writeCheck(float c_amount)
+    {
+        if (c_amount > balance)
+        {
+            return false;
+        }
