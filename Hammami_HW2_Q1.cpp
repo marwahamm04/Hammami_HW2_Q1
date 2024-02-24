@@ -111,3 +111,29 @@ public:
         {
             return false;
         }
+
+        // checking array expansion logic 
+        if (numOfChecks >= checkBookSize)
+        {
+            // doubling the Check array
+            doubleCheckArray();
+        }
+
+        // gather tge check details,and update balance
+        Check newCheck;
+        newCheck.CheckAmount = c_amount;
+        newCheck.CheckNum = numOfChecks + 1;
+        balance -= c_amount; 
+
+        // select a memo from the list
+        string memos[] = {"wedding", "baby shower", "pizza", "coffee shop", "Salon", "furniture", "car dealership"};
+        newCheck.CheckMemo = memos[rand() % (sizeof(memos) / sizeof(memos[0]))];
+
+        // Save the check to the array
+        chkPtr[numOfChecks] = newCheck;
+        numOfChecks++;
+
+        cout << "Check written: " << newCheck << endl;
+
+        return true;
+    }
