@@ -21,3 +21,8 @@ struct Check
     // Overloaded operator to print Check details
     friend ostream &operator<<(ostream &os, const Check &check);
 };
+ostream &operator<<(ostream &os, const Check &check)
+{
+    os << "CheckNum: " << check.CheckNum << ", CheckMemo: " << check.CheckMemo << ", CheckAmount: $" << check.CheckAmount;
+    return os;
+}
