@@ -26,3 +26,25 @@ ostream &operator<<(ostream &os, const Check &check)
     os << "CheckNum: " << check.CheckNum << ", CheckMemo: " << check.CheckMemo << ", CheckAmount: $" << check.CheckAmount;
     return os;
 }
+// Define the CheckBook class
+class CheckBook
+{
+private:
+    float balance;
+    Check *chkPtr;
+    float lastDeposit;
+    int numOfChecks;
+    int checkBookSize;
+
+public:
+    // Default constructor
+    CheckBook() : balance(0), lastDeposit(0), numOfChecks(0), checkBookSize(4)
+    {
+        chkPtr = new Check[checkBookSize];
+    }
+
+    // Second constructor
+    CheckBook(float initialBalance) : balance(initialBalance), lastDeposit(0), numOfChecks(0), checkBookSize(2)
+    {
+        chkPtr = new Check[checkBookSize];
+    }
