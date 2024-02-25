@@ -4,6 +4,24 @@
 #include <ctime>
 
 using namespace std;
+/*************************************************************************
+** Author : Marwa Hammami
+** Program : hw2, q1
+** Date Created : February 23, 2024
+** Date Last Modified : February 25, 2024
+** Usage : No command line arguments
+**
+** Problem:
+Accept the following information from the user (keyboard):
+- Hw1, hw2 and hw3 (out of 100)
+- Midterm (out of 100)
+- Final exam (out of 100)
+Calculate the total grade out of 100 based on the following grading scale:
+Hws --> 30% (10% each)
+Midterm --> 30%
+Final Exam --> 40%
+*************************************************************************/
+
 
 // defined the Check struct
 struct Check
