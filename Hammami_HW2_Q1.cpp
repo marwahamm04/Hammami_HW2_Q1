@@ -121,7 +121,7 @@ public:
         if (c_amount > balance)
         {
             return false;
-        }
+        }// check will not be written in this case because not enough money
 
         // checking array expansion logic
         if (numOfChecks >= checkBookSize)
@@ -146,7 +146,7 @@ public:
 
         cout << "Check written: " << newCheck << endl;
 
-        return true;
+        return true; // makes sure that the check is written 
     }
     // DisplayChecks function
     void displayChecks() const
