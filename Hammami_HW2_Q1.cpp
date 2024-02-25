@@ -41,11 +41,11 @@ ostream &operator<<(ostream &os, const Check &check)
 class CheckBook
 {
 private:
-    float balance;
-    Check *chkPtr;
-    float lastDeposit;
-    int numOfChecks;
-    int checkBookSize;
+    float balance; //current balance
+    Check *chkPtr; // an array of check objects
+    float lastDeposit; // last deposits amount of money 
+    int numOfChecks; // number of checks
+    int checkBookSize; // the size of the checkbook
 
 public:
     // Default constructor
