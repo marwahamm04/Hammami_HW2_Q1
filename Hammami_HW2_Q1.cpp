@@ -172,7 +172,7 @@ private:
         delete[] chkPtr;
         chkPtr = newChkPtr;
         checkBookSize = newSize;
-        cout << "Warning: New check book ordered. Check array doubled." << endl;
+        cout << "Warning: New check book has been ordered. The Check array doubled." << endl;
     }
 };
 
