@@ -183,7 +183,7 @@ void checkTest(CheckBook &checkBook, float initialBalance)
 
     while (checkBook.getBalance() > 0)
     {
-        float checkAmount = (rand() % 100 + 1) / 10.0f; // random check amounts
+        float checkAmount = (rand() % 100 + 1) / 10.0f; // Random check amounts
         if (!checkBook.writeCheck(checkAmount))
             break;
     }
@@ -196,7 +196,7 @@ int main()
     // Initialize CheckBook object with a high balance
     CheckBook myCheckBook(1000.0);
 
-    // Call checkTest function
+    // checkTest function
     checkTest(myCheckBook, 1000.0);
 
     return 0;
