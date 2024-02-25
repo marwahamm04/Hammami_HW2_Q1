@@ -137,3 +137,56 @@ public:
 
         return true;
     }
+        // DisplayChecks function
+    void displayChecks() const
+    {
+        for (int i = numOfChecks - 1; i >= 0; --i)
+        {
+            cout << chkPtr[i] << endl;
+        }
+    }
+
+private:
+    // Function to double the Check array
+    void doubleCheckArray()
+    {
+        int newSize = checkBookSize * 2;
+        Check *newChkPtr = new Check[newSize];
+
+        for (int i = 0; i < numOfChecks; ++i)
+        {
+            newChkPtr[i] = chkPtr[i];
+        }
+
+        delete[] chkPtr;
+        chkPtr = newChkPtr;
+        checkBookSize = newSize;
+        cout << "Warning: New check book ordered. Check array doubled." << endl;
+    }
+};
+
+// Test function
+void checkTest(CheckBook &checkBook, float initialBalance)
+{
+    srand(static_cast<unsigned int>(time(0)));
+
+    while (checkBook.getBalance() > 0)
+    {
+        float checkAmount = (rand() % 100 + 1) / 10.0f; // Small random check amounts
+        if (!checkBook.writeCheck(checkAmount))
+            break;
+    }
+
+    checkBook.displayChecks();
+}
+
+int main()
+{
+    // Initialize CheckBook object with a high balance
+    CheckBook myCheckBook(1000.0);
+
+    // Call checkTest function
+    checkTest(myCheckBook, 1000.0);
+
+    return 0;
+}
