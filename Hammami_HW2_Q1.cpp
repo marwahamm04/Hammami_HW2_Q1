@@ -12,16 +12,9 @@ using namespace std;
 ** Usage : No command line arguments
 **
 ** Problem:
-Accept the following information from the user (keyboard):
-- Hw1, hw2 and hw3 (out of 100)
-- Midterm (out of 100)
-- Final exam (out of 100)
-Calculate the total grade out of 100 based on the following grading scale:
-Hws --> 30% (10% each)
-Midterm --> 30%
-Final Exam --> 40%
+Writting a program that manages a checkbook with functions for depositing, writing checks,
+ displaying checks, and other operations!
 *************************************************************************/
-
 
 // defined the Check struct
 struct Check
@@ -130,7 +123,7 @@ public:
             return false;
         }
 
-        // checking array expansion logic 
+        // checking array expansion logic
         if (numOfChecks >= checkBookSize)
         {
             // doubling the Check array
@@ -141,7 +134,7 @@ public:
         Check newCheck;
         newCheck.CheckAmount = c_amount;
         newCheck.CheckNum = numOfChecks + 1;
-        balance -= c_amount; 
+        balance -= c_amount;
 
         // select a memo from the list
         string memos[] = {"wedding", "baby shower", "pizza", "coffee shop", "Salon", "furniture", "car dealership"};
@@ -155,7 +148,7 @@ public:
 
         return true;
     }
-        // DisplayChecks function
+    // DisplayChecks function
     void displayChecks() const
     {
         for (int i = numOfChecks - 1; i >= 0; --i)
@@ -190,7 +183,7 @@ void checkTest(CheckBook &checkBook, float initialBalance)
 
     while (checkBook.getBalance() > 0)
     {
-        float checkAmount = (rand() % 100 + 1) / 10.0f; // Small random check amounts
+        float checkAmount = (rand() % 100 + 1) / 10.0f; // random check amounts
         if (!checkBook.writeCheck(checkAmount))
             break;
     }
